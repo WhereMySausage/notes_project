@@ -1,0 +1,128 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: sans-serif;
+}
+
+body {
+    background: rgb(51, 51, 51);
+}
+
+.header {
+    margin: auto;
+    padding: 10px 20px;
+    box-shadow: 0 0 2px 0 rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    align-items: center;
+}
+
+.header h3 {
+font-size: 1.5rem;
+margin-left: 10px;
+color: white;
+}
+
+form {
+    position: relative;
+    width: 550px;
+    margin: 30px auto 50px auto;
+    background: rgb(68, 66, 66);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 1px 10px rgb(0, 0, 0);
+}
+
+form input {
+    font-family: monospace;
+    width: 100%;
+    border: none;
+    margin: 5px 10px;
+    margin-bottom: 20px;
+    outline: none;
+    font-size: 1.3rem;
+    resize: none;
+    color: white;
+    background: rgb(68, 66, 66);
+}
+form textarea {
+    font-family: monospace;
+    width: 100%;
+    border: none;
+    margin: 5px 10px;
+    margin-bottom: 10px;
+    outline: none;
+    font-size: 1.2rem;
+    resize: none;
+    color: white;
+    background: rgb(68, 66, 66);
+}
+
+form button {
+    font-family: monospace;
+    font-weight: bold;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: -120px;
+    bottom: 35px;
+    background: rgba(187, 187, 187, 0.986);
+    color: black;
+    border: none;
+    border-radius: 30%;
+    width: 70px;
+    height: 70px;
+    box-shadow: 0 4px 5px black;
+    cursor: pointer;
+    outline: none;
+}
+
+.notes {
+    font-family: sans-serif;
+    background: rgb(68, 66, 66);
+    color: rgb(255, 255, 255);
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 1px 10px rgb(0, 0, 0);
+    padding: 10px;
+    margin: 15px;
+    float: left;
+}
+
+.notes h1 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.notes p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.notes button {
+    position: relative;
+    float: right;
+    color: red;
+    border: none;
+    background: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.count {
+    font-size: 0.8rem;
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    font-family: "Lucida Grande", Arial, sans-serif;
+    color: wheat;
+}
