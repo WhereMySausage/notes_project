@@ -10,7 +10,6 @@ interface ICreateArea {
     onAdd: (newNote: INote) => void,
 }
 
-
 function CreateArea({ onAdd }: ICreateArea) {
     const [note, setNote] = useState<INote>({
         title: "",
@@ -38,8 +37,8 @@ function CreateArea({ onAdd }: ICreateArea) {
     
 return (
     <div>
-        <form>
-            <input value={note.title} type="text" placeholder='Title' name="title" onChange={handleChange}/> 
+        <form name='form1'>
+            <input value={note.title} type="text"  placeholder='Title' name="title" onChange={handleChange}/> 
                 <p>
                     <textarea value={note.content} name="content" placeholder="Take a note..." onChange={handleChange} />
                 </p>   

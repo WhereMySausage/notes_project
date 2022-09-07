@@ -107,14 +107,40 @@ form button {
     word-wrap: break-word;
 }
 
-.notes button {
+.delBtn {
     position: relative;
+    padding: 5px;
     float: right;
     color: red;
     border: none;
     background: none;
     cursor: pointer;
     outline: none;
+    font-size: 25px; 
+}
+
+.editBtn {
+    position: relative;
+    font-size: 25px; 
+    padding: 5px;
+    float: right;
+    color: white;
+    border: none;
+    background: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.paletteBtn {
+    position: relative;
+    padding: 10px;
+    float: right;
+    color: rgb(122, 168, 255);
+    border: none;
+    background: none;
+    cursor: pointer;
+    outline: none;  
+    font-size: 17px; 
 }
 
 .count {
