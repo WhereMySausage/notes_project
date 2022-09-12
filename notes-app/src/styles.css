@@ -1,154 +1,235 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-html{
-    font-family: sans-serif;
+html {
+  font-family: sans-serif;
 }
 
 body {
-    background: rgb(51, 51, 51);
+  background: rgb(51, 51, 51);
 }
 
 .header {
-    margin: auto;
-    padding: 10px 20px;
-    box-shadow: 0 0 2px 0 rgb(255, 255, 255);
-    display: flex;
-    flex-direction: row;
-    align-self: center;
-    align-items: center;
+  margin: auto;
+  padding: 10px 20px;
+  box-shadow: 0 0 2px 0 rgb(255, 255, 255);
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  align-items: center;
 }
 
 .header h3 {
-font-size: 1.5rem;
-margin-left: 10px;
-color: white;
-}
-
-form {
-    position: relative;
-    width: 550px;
-    margin: 30px auto 50px auto;
-    background: rgb(68, 66, 66);
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 1px 10px rgb(0, 0, 0);
+  font-size: 1.5rem;
+  margin-left: 10px;
+  color: white;
 }
 
 form input {
-    font-family: monospace;
-    width: 100%;
-    border: none;
-    margin: 5px 10px;
-    margin-bottom: 20px;
-    outline: none;
-    font-size: 1.3rem;
-    resize: none;
-    color: white;
-    background: rgb(68, 66, 66);
+  font-family: monospace;
+  width: 530px;
+  height: auto;
+  border: none;
+  margin: 5px 10px;
+  margin-bottom: 20px;
+  outline: none;
+  font-size: 1.5rem;
+  resize: both;
+  color: white;
+  background: rgb(68, 66, 66);
 }
 form textarea {
-    font-family: monospace;
-    width: 100%;
-    border: none;
-    margin: 5px 10px;
-    margin-bottom: 10px;
-    outline: none;
-    font-size: 1.2rem;
-    resize: none;
-    color: white;
-    background: rgb(68, 66, 66);
+  font-family: monospace;
+  width: 500px;
+  height: auto;
+  border: none;
+  margin: 5px 10px;
+  margin-bottom: 10px;
+  outline: none;
+  overflow: hidden;
+  font-size: 1.2rem;
+  resize: none;
+  color: white;
+  background: rgb(68, 66, 66);
 }
 
 form button {
-    font-family: monospace;
-    font-weight: bold;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    right: -120px;
-    bottom: 35px;
-    background: rgba(187, 187, 187, 0.986);
-    color: black;
-    border: none;
-    border-radius: 30%;
-    width: 70px;
-    height: 70px;
-    box-shadow: 0 4px 5px black;
-    cursor: pointer;
-    outline: none;
+  font-family: monospace;
+  font-size: x-large;
+  font-weight: bold;
+  position: relative;
+  justify-content: center;
+  background: rgba(187, 187, 187, 0.986);
+  color: black;
+  border: none;
+  border-radius: 40%;
+  width: 250px;
+  height: 70px;
+  box-shadow: 0 4px 5px black;
+  cursor: pointer;
+  outline: none;
+  margin: 0 auto;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-.notes {
-    font-family: sans-serif;
-    background: rgb(68, 66, 66);
-    color: rgb(255, 255, 255);
-    width: 250px;
-    border-radius: 8px;
-    box-shadow: 0 1px 10px rgb(0, 0, 0);
-    padding: 10px;
-    margin: 15px;
-    float: left;
+.note {
+  font-family: sans-serif;
+  background: rgb(68, 66, 66);
+  color: rgb(255, 255, 255);
+  width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 1px 10px rgb(0, 0, 0);
+  padding: 10px;
+  margin-right: 20px;
+  margin-left: 45px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  float: left;
 }
 
-.notes h1 {
-    font-size: 1rem;
-    margin-bottom: 8px;
+.note h1 {
+  font-size: 1rem;
+  margin-bottom: 8px;
 }
 
-.notes p {
-    font-size: 1rem;
-    margin-bottom: 10px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+.note p {
+  font-family: monospace;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 5px;
+  margin: 5px;
+  float: left;
+  color: rgb(102, 179, 179);
+  text-shadow: 1px 0 1px #000, 
+0 1px 1px #000, 
+-1px 0 1px #000, 
+0 -1px 1px #000;
+}
+
+.note input {
+  font-family: monospace;
+  width: 200px;
+  height: auto;
+  border: none;
+  margin: 5px 10px;
+  margin-bottom: 20px;
+  outline: none;
+  font-size: 1.2rem;
+  resize: both;
+  color: white;
+  background: rgb(68, 66, 66);
+  text-shadow: 1px 0 1px #000, 
+0 1px 1px #000, 
+-1px 0 1px #000, 
+0 -1px 1px #000;
+}
+
+.note textarea {
+  font-family: monospace;
+  width: 200px;
+  border: none;
+  margin: 5px 10px;
+  margin-bottom: 10px;
+  outline: none;
+  overflow: hidden;
+  font-size: 1rem;
+  resize: none;
+  color: white;
+  background: rgb(68, 66, 66);
+  height: fit-content;
+  text-shadow: 1px 0 1px #000, 
+0 1px 1px #000, 
+-1px 0 1px #000, 
+0 -1px 1px #000;
 }
 
 .delBtn {
-    position: relative;
-    padding: 5px;
-    float: right;
-    color: red;
-    border: none;
-    background: none;
-    cursor: pointer;
-    outline: none;
-    font-size: 25px; 
+  position: relative;
+  padding: 5px;
+  float: right;
+  color: red;
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  font-size: 25px;
 }
 
 .editBtn {
-    position: relative;
-    font-size: 25px; 
-    padding: 5px;
-    float: right;
-    color: white;
-    border: none;
-    background: none;
-    cursor: pointer;
-    outline: none;
+  position: relative;
+  font-size: 25px;
+  padding: 5px;
+  float: right;
+  color: rgb(0, 0, 0);
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
 }
 
 .paletteBtn {
-    position: relative;
-    padding: 10px;
-    float: right;
-    color: rgb(122, 168, 255);
-    border: none;
-    background: none;
-    cursor: pointer;
-    outline: none;  
-    font-size: 17px; 
+  position: relative;
+  padding: 10px;
+  float: right;
+  color: rgb(122, 168, 255);
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  font-size: 17px;
 }
 
 .count {
-    font-size: 0.8rem;
-    display: flex;
-    margin-top: 20px;
-    align-items: center;
-    justify-content: center;
-    font-family: "Lucida Grande", Arial, sans-serif;
-    color: wheat;
+  font-size: 0.8rem;
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lucida Grande", Arial, sans-serif;
+  color: wheat;
+}
+
+.search{
+  display: flex;
+  align-items: center;
+  background-color: rgb(233, 233, 233);
+  border-radius: 8px;
+  margin-right: 10rem;
+  margin-left: 10rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.search input {
+  font-family: monospace;
+  font-size: medium;
+  font-weight: bold;
+  border: none;
+  width: 1550px;
+  margin-left: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: rgb(233, 233, 233);
+}
+
+.search input:focus {
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(82, 82, 82);
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(rgb(56, 56, 56), black);
+  border-radius: 8px;
 }

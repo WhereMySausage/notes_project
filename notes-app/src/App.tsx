@@ -1,49 +1,53 @@
-import React, { useState } from 'react';
-import Header from './components/Header';
-import CreateArea, { INote } from './components/CreateArea';
-import Notes from './components/notes';
-import Count from './components/Count';
+import { useState } from "react";
+import Header from "./components/Header";
+import CreateArea from "./components/CreateArea";
+import Note from "./components/notes";
+import Count from "./components/Count";
+import { INote } from "./models/note";
+import Search from "./components/Search";
 
-function App(props: any) {
-  const [notes, setNotes] = useState<INote[]>([])
-
-  function addNote(newNote:INote):void {
-    setNotes(prevValue => {
-      return [...prevValue, newNote];
-    });
+function App() {
+  const localNotes = localStorage.getItem('notes') || '[]';
+  const [notes, setNotes] = useState<INote[]>(JSON.parse(localNotes));
+  
+  function addNote(newNote: INote): void {
+    notes.push(newNote)
+    setNotes([...notes!]);
+    localStorage.setItem('notes', JSON.stringify(notes));
   }
 
-function deleteNotes(id:number):void {
-  setNotes(prevValue => {
-    return [...prevValue.filter((note, index) =>
-      index !== id)];
-  });
-}
+  function deleteNote(id: string): void {
+    const filteredNotes = notes.filter(note => note.id !== id) 
+    setNotes(filteredNotes);
+    localStorage.setItem('notes', JSON.stringify(filteredNotes)); 
+    localStorage.removeItem(id);
+  }
 
-function editNotes(id:number):void {
-  setNotes(prevValue => {
-    return [...prevValue.filter((note, index) =>
-      index !== id)];
-  });
-}
-  
+
   return (
     <div>
       <Header />
-      <Count count={notes.length === 0 ? "Notes missing" : `You have ${notes.length} Notes ` } />
+      <Search />
+      <Count
+        count={
+          notes && notes.length === 0
+            ? "Notes missing"
+            : `You have ${notes!.length} Notes `
+        }
+      />
       <CreateArea onAdd={addNote} />
-      {notes.map((note, index) => (
-        <Notes
-          key={index}
-          id={index}
+      {notes && notes.map((note) => (
+        <Note
+          date={note.date}
+          key={note.id}
+          id={note.id}
           title={note.title}
           content={note.content}
-          onDelete={deleteNotes}
-          onEdit={editNotes} />
-        ))}
+          onDelete={deleteNote}
+        />
+      ))}
     </div>
   );
-  
-};
+}
 
 export default App;
