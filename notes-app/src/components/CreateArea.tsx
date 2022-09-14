@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { IoMdAdd } from "react-icons/io";
 import { nanoid } from "nanoid";
 import { INote } from "../models/note";
 
@@ -27,16 +26,6 @@ function CreateArea({ onAdd }: ICreateArea) {
     id: nanoid(),
   });
 
-  function handleChange(e: { target: { name: string; value: string } }) {
-    const { name, value } = e.target;
-    setNote((preValue) => {
-      return {
-        ...preValue,
-        [name]: value,
-      };
-    });
-  }
-
   function submitButton(event: any) {
     event.preventDefault();
 
@@ -49,44 +38,24 @@ function CreateArea({ onAdd }: ICreateArea) {
     onAdd(note);
   }
 
-  function autoGrow(element: any) {
-    element.target.style.height = "20px";
-    element.target.style.height = element.target.scrollHeight + "px";
-  }
-
   return (
     <div>
       <form>
-        <button
-          onClick={(event) => {
-            submitButton(event);
-          }}
-        >Add note
-        </button>
+        {localStorage.getItem("val") === "" ? (
+          <button
+            disabled={false}
+            onClick={(event) => {
+              submitButton(event);
+            }}
+          >
+            Add note
+          </button>
+        ) : (
+          <div></div>
+        )}
       </form>
     </div>
   );
 }
 
 export default CreateArea;
-
-/*<form name="form1">
-        <input
-          maxLength={30}
-          value={note.title}
-          type="text"
-          placeholder="Title"
-          name="title"
-          onChange={handleChange}
-        />
-        <p>
-          <textarea
-            maxLength={500}
-            onInput={autoGrow}
-            value={note.content}
-            name="content"
-            placeholder="Take a note..."
-            onChange={handleChange}
-          />
-        </p>
-        <input value={output} type="text" name="time" onChange={handleChange} /></form>*/

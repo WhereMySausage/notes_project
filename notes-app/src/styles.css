@@ -22,10 +22,18 @@ body {
   align-items: center;
 }
 
-.header h3 {
+.home {
   font-size: 1.5rem;
   margin-left: 10px;
   color: white;
+  background: none;
+  border: none;
+}
+
+.home:hover {
+  background: rgba(0, 0, 0, 0);
+  color: #fcff68;
+  text-decoration: underline;
 }
 
 form input {
@@ -105,10 +113,7 @@ form button {
   margin: 5px;
   float: left;
   color: rgb(102, 179, 179);
-  text-shadow: 1px 0 1px #000, 
-0 1px 1px #000, 
--1px 0 1px #000, 
-0 -1px 1px #000;
+  text-shadow: 1px 0 1px #000, 0 1px 1px #000, -1px 0 1px #000, 0 -1px 1px #000;
 }
 
 .note input {
@@ -123,10 +128,7 @@ form button {
   resize: both;
   color: white;
   background: rgb(68, 66, 66);
-  text-shadow: 1px 0 1px #000, 
-0 1px 1px #000, 
--1px 0 1px #000, 
-0 -1px 1px #000;
+  text-shadow: 1px 0 1px #000, 0 1px 1px #000, -1px 0 1px #000, 0 -1px 1px #000;
 }
 
 .note textarea {
@@ -142,10 +144,7 @@ form button {
   color: white;
   background: rgb(68, 66, 66);
   height: fit-content;
-  text-shadow: 1px 0 1px #000, 
-0 1px 1px #000, 
--1px 0 1px #000, 
-0 -1px 1px #000;
+  text-shadow: 1px 0 1px #000, 0 1px 1px #000, -1px 0 1px #000, 0 -1px 1px #000;
 }
 
 .delBtn {
@@ -194,7 +193,7 @@ form button {
   color: wheat;
 }
 
-.search{
+.search {
   display: flex;
   align-items: center;
   background-color: rgb(233, 233, 233);
@@ -219,6 +218,45 @@ form button {
 
 .search input:focus {
   outline: none;
+}
+
+.note input.inp {
+  width: 175px;
+  height: 25px;
+  margin-left: 10px;
+  background-color: rgb(233, 233, 233);
+  margin-right: 5px;
+}
+
+.note input.box {
+  border: none;
+  width: 30px;
+  height: 25px;
+  margin-left: -5px;
+  margin-right: -5px;
+  background-color: rgb(233, 233, 233);
+  float: left;
+}
+
+.note button.addChBx {
+  font-family: monospace;
+  font-size: xx-large;
+  font-weight: bold;
+  position: relative;
+  color: black;
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: none;
+}
+
+.drop-area {
+  width: 230px;
+  height: 50px;
+  border: 2px dashed black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 ::-webkit-scrollbar {
