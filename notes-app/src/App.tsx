@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import CreateArea from "./components/CreateArea";
-import Note from "./components/Notes";
+import Note from "./components/Note";
 import Count from "./components/Count";
 import { INote } from "./models/note";
 import Search from "./components/Search";
@@ -33,8 +33,13 @@ function App() {
     localStorage.removeItem(id);
   }
 
+  function sort(drag: number, drop: number ) {
+
+   }
+
+
   return (
-    <div>
+    <div >
       <Header />
       <Search />
       <Count
@@ -46,14 +51,16 @@ function App() {
       />
       <CreateArea onAdd={addNote} />
       {notes &&
-        notes.map((note) => (
+        notes.map((note, index) => (
           <Note
+            index={index}
             date={note.date}
             key={note.id}
             id={note.id}
             title={note.title}
             content={note.content}
             onDelete={deleteNote}
+            onSort={sort}
           />
         ))}
     </div>

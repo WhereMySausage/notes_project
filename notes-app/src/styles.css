@@ -36,34 +36,6 @@ body {
   text-decoration: underline;
 }
 
-form input {
-  font-family: monospace;
-  width: 530px;
-  height: auto;
-  border: none;
-  margin: 5px 10px;
-  margin-bottom: 20px;
-  outline: none;
-  font-size: 1.5rem;
-  resize: both;
-  color: white;
-  background: rgb(68, 66, 66);
-}
-form textarea {
-  font-family: monospace;
-  width: 500px;
-  height: auto;
-  border: none;
-  margin: 5px 10px;
-  margin-bottom: 10px;
-  outline: none;
-  overflow: hidden;
-  font-size: 1.2rem;
-  resize: none;
-  color: white;
-  background: rgb(68, 66, 66);
-}
-
 form button {
   font-family: monospace;
   font-size: x-large;
@@ -128,7 +100,7 @@ form button {
   resize: both;
   color: white;
   background: rgb(68, 66, 66);
-  text-shadow: 1px 0 1px #000, 0 1px 1px #000, -1px 0 1px #000, 0 -1px 1px #000;
+  text-shadow: none;
 }
 
 .note textarea {
@@ -136,7 +108,7 @@ form button {
   width: 200px;
   border: none;
   margin: 5px 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   outline: none;
   overflow: hidden;
   font-size: 1rem;
@@ -144,7 +116,7 @@ form button {
   color: white;
   background: rgb(68, 66, 66);
   height: fit-content;
-  text-shadow: 1px 0 1px #000, 0 1px 1px #000, -1px 0 1px #000, 0 -1px 1px #000;
+  text-shadow: none;
 }
 
 .delBtn {
@@ -220,34 +192,56 @@ form button {
   outline: none;
 }
 
-.note input.inp {
-  width: 175px;
-  height: 25px;
-  margin-left: 10px;
-  background-color: rgb(233, 233, 233);
-  margin-right: 5px;
-}
-
-.note input.box {
-  border: none;
-  width: 30px;
-  height: 25px;
-  margin-left: -5px;
-  margin-right: -5px;
-  background-color: rgb(233, 233, 233);
+input.box {
   float: left;
+  position: relative;
+  border: none;
+  width: 20px;
+  height: 20px;
+  margin-left: 0px;
+  margin-right: 3px;
+  background-color: rgb(233, 233, 233);
+  cursor: pointer;
 }
 
-.note button.addChBx {
+textarea.inp {
+  font-family: monospace;
+  width: 165px;
+  height: auto;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  resize: both;
+  color: rgb(255, 255, 255);
+  background: rgb(68, 66, 66);
+  text-shadow: none;
+  overflow: hidden;
+  resize: none;
+  margin-bottom: 5px;
+}
+
+button.addChBx {
   font-family: monospace;
   font-size: xx-large;
   font-weight: bold;
   position: relative;
-  color: black;
+  float: right;
+  color: rgb(255, 0, 0);
   width: 20px;
   height: 20px;
   background: none;
   border: none;
+}
+
+hr {
+  background-color: #4c4b4b;
+  border: 1px none;
+  height: 2px;
+}
+
+input.box:checked + textarea.inp {
+  text-decoration: line-through;
+  opacity: 0.5;
 }
 
 .drop-area {
