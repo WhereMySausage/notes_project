@@ -1,20 +1,16 @@
 import { useState } from "react";
+import Search from "./components/Search";
 import Header from "./components/Header";
 import CreateArea from "./components/CreateArea";
 import Note from "./components/Note";
 import Count from "./components/Count";
 import { INote } from "./models/note";
-import Search from "./components/Search";
+import Footer from "./components/Footer";
+
 
 function App() {
   const localNotes = localStorage.getItem("notes") || "[]";
   const [notes, setNotes] = useState<INote[]>(JSON.parse(localNotes));
-
-  try {
-    JSON.parse(localNotes);
-  } catch (err) {
-    console.log(err);
-  }
 
   function addNote(newNote: INote): void {
     notes.push(newNote);
@@ -30,18 +26,26 @@ function App() {
     localStorage.setItem("notes", JSON.stringify(filteredNotes));
     localStorage.setItem("seraching", JSON.stringify(filteredNotes));
     localStorage.setItem("notesdef", JSON.stringify(filteredNotes));
+    localStorage.removeItem("img" + id)
+    localStorage.removeItem("edit" + id);
+    localStorage.removeItem("TodoList" + id);
+    localStorage.removeItem("TodoListdef" + id);
     localStorage.removeItem(id);
   }
 
-  function sort(drag: number, drop: number ) {
+  function sort(drag: any) {
+    setNotes(drag);
+    localStorage.setItem("notesdef", JSON.stringify(drag));
+  }
 
-   }
-
+    function search(arr: any): void{
+      setNotes(arr);
+  }
 
   return (
-    <div >
-      <Header />
-      <Search />
+    <div>
+      <Header/>
+      <Search  onSearch={search}/>
       <Count
         count={
           notes && notes.length === 0
@@ -49,10 +53,11 @@ function App() {
             : `You have ${notes!.length} Notes `
         }
       />
-      <CreateArea onAdd={addNote} />
+      <CreateArea onAdd={addNote}  /> 
       {notes &&
-        notes.map((note, index) => (
-          <Note
+        notes
+          .map((note, index) => (
+            <Note
             index={index}
             date={note.date}
             key={note.id}
@@ -60,10 +65,13 @@ function App() {
             title={note.title}
             content={note.content}
             onDelete={deleteNote}
-            onSort={sort}
+              onSort={sort}
           />
-        ))}
+          ))} 
+      <Footer  />
+      
     </div>
+    
   );
 }
 

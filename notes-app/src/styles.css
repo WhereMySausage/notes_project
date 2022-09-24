@@ -22,6 +22,15 @@ body {
   align-items: center;
 }
 
+.footer {
+  background: rgb(51, 51, 51);
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 15px;
+  width: 100%;
+}
+
 .home {
   font-size: 1.5rem;
   margin-left: 10px;
@@ -42,13 +51,12 @@ form button {
   font-weight: bold;
   position: relative;
   justify-content: center;
-  background: rgba(187, 187, 187, 0.986);
-  color: black;
-  border: none;
-  border-radius: 40%;
-  width: 250px;
-  height: 70px;
-  box-shadow: 0 4px 5px black;
+  background: rgb(51, 51, 51);
+  color: rgb(255, 255, 255);
+  border: solid grey 2px;
+  border-radius: 50px;
+  width: 200px;
+  height: 50px;
   cursor: pointer;
   outline: none;
   margin: 0 auto;
@@ -57,14 +65,20 @@ form button {
   margin-bottom: 20px;
 }
 
+form button:hover,
+form button:active {
+  color: #727272;
+  font-size: 170%;
+}
+
 .note {
   font-family: sans-serif;
-  background: rgb(68, 66, 66);
+  background: rgb(51, 51, 51);
   color: rgb(255, 255, 255);
   width: 250px;
   border-radius: 8px;
-  box-shadow: 0 1px 10px rgb(0, 0, 0);
   padding: 10px;
+  border: solid grey 1px;
   margin-right: 20px;
   margin-left: 45px;
   margin-top: 20px;
@@ -84,7 +98,7 @@ form button {
   padding: 5px;
   margin: 5px;
   float: left;
-  color: rgb(102, 179, 179);
+  color: rgb(255, 255, 255);
   text-shadow: 1px 0 1px #000, 0 1px 1px #000, -1px 0 1px #000, 0 -1px 1px #000;
 }
 
@@ -99,7 +113,7 @@ form button {
   font-size: 1.2rem;
   resize: both;
   color: white;
-  background: rgb(68, 66, 66);
+  background: rgb(51, 51, 51);
   text-shadow: none;
 }
 
@@ -108,35 +122,63 @@ form button {
   width: 200px;
   border: none;
   margin: 5px 10px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   outline: none;
   overflow: hidden;
   font-size: 1rem;
   resize: none;
   color: white;
-  background: rgb(68, 66, 66);
+  background: rgb(51, 51, 51);
   height: fit-content;
   text-shadow: none;
+}
+
+.nav {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.55s opacity, 0.55s visibility;
+}
+.note:hover .nav {
+  opacity: 1;
+  visibility: visible;
+}
+
+label {
+  width: auto;
+  display: block;
+  background-color: rgb(51, 51, 51);
+  color: rgb(255, 255, 255);
+  font-size: small;
+  padding: 2px;
+  border-radius: 0.3rem;
+  border: grey solid 1px;
+  cursor: pointer;
+  text-align: center;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 5px;
+}
+
+label:hover {
+  background-color: grey;
 }
 
 .delBtn {
   position: relative;
   padding: 5px;
   float: right;
-  color: red;
+  color: grey;
   border: none;
   background: none;
   cursor: pointer;
   outline: none;
-  font-size: 25px;
 }
 
 .editBtn {
   position: relative;
-  font-size: 25px;
   padding: 5px;
   float: right;
-  color: rgb(0, 0, 0);
+  color: grey;
   border: none;
   background: none;
   cursor: pointer;
@@ -145,14 +187,13 @@ form button {
 
 .paletteBtn {
   position: relative;
-  padding: 10px;
+  padding: 5px;
   float: right;
-  color: rgb(122, 168, 255);
+  color: rgb(128, 128, 128);
   border: none;
   background: none;
   cursor: pointer;
   outline: none;
-  font-size: 17px;
 }
 
 .count {
@@ -172,24 +213,39 @@ form button {
   border-radius: 8px;
   margin-right: 10rem;
   margin-left: 10rem;
-  margin-top: 1.2rem;
+  margin-top: -3.6rem;
   margin-bottom: 1.2rem;
+  background: rgb(145, 145, 145);
+  border: solid rgb(0, 0, 0) 1px;
 }
 
 .search input {
   font-family: monospace;
   font-size: medium;
+  color: white;
   font-weight: bold;
   border: none;
   width: 1550px;
   margin-left: 0.5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  background-color: rgb(233, 233, 233);
+  background: rgb(145, 145, 145);
 }
 
 .search input:focus {
   outline: none;
+}
+
+.search input::placeholder {
+  color: rgb(233, 233, 233);
+}
+
+.searchIcons {
+  min-width: 20px;
+  width: auto;
+  height: auto;
+  color: #ffff;
+  margin-left: 10px;
 }
 
 input.box {
@@ -213,24 +269,30 @@ textarea.inp {
   font-size: 1rem;
   resize: both;
   color: rgb(255, 255, 255);
-  background: rgb(68, 66, 66);
+  background: rgb(51, 51, 51);
   text-shadow: none;
   overflow: hidden;
   resize: none;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
+  color: #fff !important;
+  text-shadow: 1px 1px 1px #000;
 }
 
-button.addChBx {
+button.delChBx {
   font-family: monospace;
   font-size: xx-large;
   font-weight: bold;
   position: relative;
   float: right;
-  color: rgb(255, 0, 0);
-  width: 20px;
+  color: grey;
+  width: 15px;
   height: 20px;
   background: none;
   border: none;
+}
+
+button.delChBx:hover {
+  color: rgb(255, 65, 65);
 }
 
 hr {
